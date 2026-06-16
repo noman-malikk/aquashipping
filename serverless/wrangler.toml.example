@@ -1,0 +1,14 @@
+name = "aqua-shipping-quote-api"
+main = "cloudflare-worker.ts"
+compatibility_date = "2026-06-16"
+
+[vars]
+ALLOWED_ORIGIN = "https://www.aquashipping.co.uk"
+OWNER_EMAIL = "owner@example.com"
+EMAIL_FROM = "Aqua Shipping <quotes@example.com>"
+EMAIL_PROVIDER = "resend"
+
+# Set secrets with:
+# wrangler secret put TELEGRAM_BOT_TOKEN
+# wrangler secret put TELEGRAM_CHAT_ID
+# wrangler secret put EMAIL_API_KEY

@@ -1,0 +1,13 @@
+{
+  "name": "aqua-shipping-serverless",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev cloudflare-worker.ts",
+    "deploy": "wrangler deploy cloudflare-worker.ts"
+  },
+  "devDependencies": {
+    "wrangler": "^4.54.0"
+  }
+}
