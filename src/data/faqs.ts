@@ -7,7 +7,7 @@ export const homeFaqs: FAQ[] = [
   {
     question: "How quickly will I receive my shipping quote?",
     answer:
-      "Most enquiries are reviewed within 30 minutes during business hours. Complex cargo, customs questions or very large shipments may need a little more checking before we email your quote.",
+      "The team reviews quote requests as promptly as possible during business hours. Complex cargo, customs questions or very large shipments may need extra checking before we email your quote.",
   },
   {
     question: "Can you arrange collection in the UK?",

@@ -13,12 +13,16 @@ export const serviceLinks = [
   { label: "Door-to-Door", href: "/door-to-door-cargo-service" },
   { label: "Household Goods", href: "/household-goods-shipping-overseas" },
   { label: "Commercial Cargo", href: "/commercial-cargo-shipping" },
+  { label: "Road Freight", href: "/road-freight-uk" },
+  { label: "Warehousing", href: "/logistics-and-warehousing" },
+  { label: "Export Documentation", href: "/export-documentation-services" },
   { label: "Customs Documentation", href: "/customs-documentation" },
+  { label: "Dangerous Goods", href: "/dangerous-goods-shipping-guidance" },
 ];
 
 export const mainNavLinks = [
   { label: "Home", href: "/" },
-  { label: "Destinations", href: "/shipping-to-pakistan-from-uk" },
+  { label: "Worldwide", href: "/#worldwide-service" },
   { label: "Services", href: "/air-cargo-services-uk" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

@@ -143,7 +143,7 @@ async function sendTelegramAlert(env: Env, quote: QuoteRequest) {
     safe(quote.message),
     "",
     "Actions needed:",
-    "Respond to the customer by email within 30 minutes.",
+    "Respond to the customer by email as soon as possible.",
   ].join("\n");
 
   const response = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -174,7 +174,7 @@ async function sendCustomerConfirmation(env: Env, quote: QuoteRequest) {
     "",
     `Your reference number is ${safe(quote.leadId)}.`,
     "",
-    "Our team will review your details and respond by email as soon as possible, usually within 30 minutes during business hours.",
+    "Our team will review your details and respond by email as soon as possible during business hours.",
     "",
     "Kind regards,",
     "Aqua Shipping",

@@ -14,7 +14,7 @@ export const seo = {
   quote: {
     title: "Get a Cargo Shipping Quote | UK International Shipping",
     description:
-      "Request a UK cargo shipping quote for parcels, boxes, household goods and commercial cargo. Most enquiries answered within 30 minutes.",
+      "Request a UK cargo shipping quote for parcels, boxes, household goods and commercial cargo with clear email follow-up.",
     path: "/get-quote",
   },
   about: {

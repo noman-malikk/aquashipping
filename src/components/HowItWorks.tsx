@@ -15,7 +15,7 @@ const steps = [
   },
   {
     title: "You receive a quote by email",
-    text: "Most enquiries are answered within 30 minutes during business hours.",
+    text: "The team replies by email with practical service options and next steps.",
     icon: MailCheck,
   },
   {

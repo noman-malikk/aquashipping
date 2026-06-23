@@ -25,7 +25,7 @@ export function GetQuotePage() {
       <PageHero
         eyebrow="Get a cargo quote"
         showCta={false}
-        text="Send us the key details for parcels, boxes, household goods or commercial cargo. The team reviews your request and responds by email, usually within 30 minutes during business hours."
+        text="Send us the key details for parcels, boxes, household goods or commercial cargo. The team reviews your request and responds by email with practical shipping options."
         title="Get a Cargo Shipping Quote"
       />
       <TrustBadges />

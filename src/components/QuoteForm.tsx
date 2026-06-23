@@ -17,6 +17,12 @@ const cargoTypes = [
   "Documents",
   "Excess baggage",
   "Vehicle parts",
+  "Perishables or frozen food",
+  "Retail or fashion goods",
+  "Technology or electronics",
+  "Engineering or manufacturing parts",
+  "Merchandise in baggage",
+  "Dangerous or restricted goods",
   "Other",
 ];
 
@@ -183,7 +189,7 @@ export function QuoteForm() {
         <CheckCircle2 aria-hidden="true" className="mx-auto h-14 w-14 text-aqua" />
         <h2 className="mt-5 text-2xl font-black text-navy">Thank you. Your quote request has been received.</h2>
         <p className="mt-3 text-base leading-8 text-slate-700">
-          Our team usually responds within 30 minutes. Your reference number is <strong>{submittedLead}</strong>.
+          Our team will review your shipment details and respond by email as soon as possible. Your reference number is <strong>{submittedLead}</strong>.
         </p>
         <div className="mt-7">
           <CTAButton to="/" variant="ghost">Back to Home</CTAButton>
@@ -198,7 +204,7 @@ export function QuoteForm() {
         <div>
           <p className="text-sm font-bold uppercase text-aqua">Quote form</p>
           <h2 className="mt-2 text-2xl font-black text-navy">Tell us about your shipment</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-600">Most enquiries answered within 30 minutes.</p>
+          <p className="mt-2 text-sm leading-6 text-slate-600">Share your cargo details for a clear email quote.</p>
         </div>
         <div className="grid grid-cols-4 gap-2">
           {steps.map((item, index) => (
@@ -250,7 +256,7 @@ export function QuoteForm() {
                 <TextField error={errorFor("approximateWeight")} helper="A best estimate is fine." label="Approximate weight" placeholder="Example: 45 kg" registration={register("approximateWeight")} />
                 <TextField error={errorFor("numberOfItems")} label="Number of boxes/items" min={1} registration={register("numberOfItems")} type="number" />
                 <TextField error={errorFor("dimensions")} helper="Optional. Example: 60 x 40 x 40 cm per box." label="Dimensions optional" placeholder="Length x width x height" registration={register("dimensions")} />
-                <SelectField error={errorFor("preferredService")} label="Preferred service" options={["Air cargo", "Sea cargo", "Not sure"]} registration={register("preferredService")} />
+                <SelectField error={errorFor("preferredService")} label="Preferred service" options={["Air cargo", "Sea cargo", "Road freight / UK transfer", "Door-to-door", "Warehousing / logistics support", "Not sure"]} registration={register("preferredService")} />
                 <SelectField error={errorFor("collectionRequired")} label="Collection required" options={["Yes", "No"]} registration={register("collectionRequired")} />
                 <SelectField error={errorFor("packingRequired")} label="Packing required" options={["Yes", "No"]} registration={register("packingRequired")} />
                 <TextField error={errorFor("itemValue")} helper="Approximate value for quote and documentation review." label="Item value" placeholder="Example: GBP 250" registration={register("itemValue")} />

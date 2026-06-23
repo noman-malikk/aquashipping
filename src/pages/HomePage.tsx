@@ -1,9 +1,22 @@
-import { ArrowRight, CheckCircle2, MailCheck, ShieldCheck, Ship, Timer, Truck } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ClipboardCheck,
+  Globe2,
+  MailCheck,
+  PackageCheck,
+  Plane,
+  ShieldCheck,
+  Ship,
+  Timer,
+  Truck,
+  Warehouse,
+} from "lucide-react";
 import { Link } from "react-router-dom";
-import { DestinationCard } from "../components/DestinationCard";
 import { FAQAccordion } from "../components/FAQAccordion";
 import { Hero } from "../components/Hero";
 import { HowItWorks } from "../components/HowItWorks";
+import { IndustryGrid } from "../components/IndustryGrid";
 import { SEOHead } from "../components/SEOHead";
 import { SectionHeading } from "../components/SectionHeading";
 import { ServiceCard } from "../components/ServiceCard";
@@ -12,19 +25,54 @@ import { TrustBadges } from "../components/TrustBadges";
 import { ContactSection } from "../components/ContactSection";
 import { CTAButton } from "../components/CTAButton";
 import { ScrollReveal } from "../components/ScrollReveal";
-import { destinations } from "../data/destinations";
 import { homeFaqs } from "../data/faqs";
 import { seo } from "../data/seo";
 import { services } from "../data/services";
 
 const reasons = [
-  "Fast response within 30 minutes",
+  "Responsive quote handling",
   "UK-based service",
   "Asian and Middle East destination specialists",
-  "Air and sea options",
+  "Air, sea and road options",
+  "LCL and FCL sea freight guidance",
   "Door-to-door support",
+  "Warehousing and logistics review",
+  "Export documentation checks",
   "Clear pricing",
   "Professional customer support",
+];
+
+const worldwideServices = [
+  {
+    title: "Worldwide Air Freight",
+    text: "Fast international air cargo for urgent parcels, documents, samples and time-sensitive shipments.",
+    icon: Plane,
+  },
+  {
+    title: "Worldwide Sea Freight",
+    text: "LCL and FCL sea freight options for heavy boxes, furniture, stock and commercial cargo.",
+    icon: Ship,
+  },
+  {
+    title: "Door-to-Door Worldwide",
+    text: "Collection, cargo handling and final delivery support reviewed by route and destination rules.",
+    icon: PackageCheck,
+  },
+  {
+    title: "Global Customs Support",
+    text: "Help with invoices, declarations, commodity details and destination documentation checks.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "UK Collection Network",
+    text: "Collection and road transfer options for airport, port, warehouse and door-to-door handover.",
+    icon: Truck,
+  },
+  {
+    title: "Business Logistics",
+    text: "Support for repeat commercial cargo, warehousing, consolidation and multi-modal freight planning.",
+    icon: Warehouse,
+  },
 ];
 
 export function HomePage() {
@@ -40,19 +88,39 @@ export function HomePage() {
       <Hero />
       <TrustBadges />
 
-      <section className="bg-white py-20">
+      <section className="bg-white py-20" id="worldwide-service">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Popular destinations"
-            text="Specialist quote support for parcels, boxes, household goods and commercial cargo across high-demand routes."
-            title="Shipping from the UK to Pakistan, India, Dubai, UAE and beyond"
+            eyebrow="Worldwide service"
+            text="One quote flow for international cargo from the UK to destinations across Asia, the Middle East, Europe, Africa, North America and beyond."
+            title="Air, sea, road and door-to-door freight support worldwide"
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {destinations.map((destination) => (
-              <ScrollReveal className="h-full" key={destination.slug}>
-                <DestinationCard destination={destination} />
-              </ScrollReveal>
-            ))}
+            {worldwideServices.map((service) => {
+              const Icon = service.icon;
+              return (
+                <ScrollReveal className="h-full" key={service.title}>
+                  <article className="h-full rounded-lg border border-slate-200 bg-white p-6 shadow-card transition hover:border-ocean/40 hover:-translate-y-1">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-blue-50 text-ocean">
+                      <Icon aria-hidden="true" className="h-6 w-6" />
+                    </span>
+                    <h3 className="mt-6 text-xl font-black text-navy">{service.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{service.text}</p>
+                  </article>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+          <div className="mt-10 rounded-lg bg-navy p-6 text-white shadow-glow">
+            <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <div>
+                <Globe2 aria-hidden="true" className="h-9 w-9 text-aqua" />
+                <h3 className="mt-4 text-2xl font-black">Worldwide coverage from one UK quote request</h3>
+              </div>
+              <p className="text-sm leading-7 text-blue-100">
+                Share the destination country, city, cargo type, weight and preferred service. We will review the practical options for your shipment, whether it is personal cargo, household goods, excess baggage, business stock or commercial freight.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -75,6 +143,8 @@ export function HomePage() {
         </div>
       </section>
 
+      <IndustryGrid />
+
       <HowItWorks />
 
       <section className="bg-white py-20">
@@ -94,7 +164,7 @@ export function HomePage() {
             <div className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-card">
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
-                  { icon: Timer, text: "30 minute response promise" },
+                  { icon: Timer, text: "Prompt quote review" },
                   { icon: MailCheck, text: "Quote sent by email" },
                   { icon: Truck, text: "Collection reviewed" },
                   { icon: ShieldCheck, text: "Privacy reassurance" },

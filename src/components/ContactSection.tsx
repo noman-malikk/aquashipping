@@ -10,7 +10,7 @@ export function ContactSection() {
           <p className="text-sm font-bold uppercase text-aqua">Quote support</p>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl">Need help choosing air, sea or door-to-door cargo?</h2>
           <p className="mt-4 max-w-2xl text-base leading-8 text-blue-100">
-            Share your shipment details and we will respond by email as soon as possible. Most enquiries are answered within 30 minutes during business hours.
+            Share your shipment details and we will respond by email as soon as possible with practical service options.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">

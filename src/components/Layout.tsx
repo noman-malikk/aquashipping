@@ -8,8 +8,15 @@ export function Layout() {
   const location = useLocation();
 
   useEffect(() => {
+    if (location.hash) {
+      window.requestAnimationFrame(() => {
+        document.querySelector(location.hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      return;
+    }
+
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
+  }, [location.hash, location.pathname]);
 
   return (
     <div className="min-h-screen bg-white pb-20 text-ink lg:pb-0">

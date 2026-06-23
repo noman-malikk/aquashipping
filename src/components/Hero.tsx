@@ -1,4 +1,4 @@
-import { MailCheck, MessageCircle, Phone, Ship } from "lucide-react";
+import { MessageCircle, Phone, Ship } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/aqua-logistics-hero.jpg";
 import { phoneHref, whatsappHref } from "../lib/company";
@@ -17,18 +17,9 @@ export function Hero() {
       <AnimatedBackground />
       <div className="container-page relative z-10 flex min-h-[76svh] items-center py-16">
         <div className="max-w-3xl">
-          <motion.div
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-blue-50 backdrop-blur"
-            initial={{ opacity: 0, y: 18 }}
-            transition={{ duration: 0.55 }}
-          >
-            <MailCheck aria-hidden="true" className="h-4 w-4 text-aqua" />
-            Most enquiries answered within 30 minutes
-          </motion.div>
           <motion.h1
             animate={{ opacity: 1, y: 0 }}
-            className="mt-6 max-w-3xl text-4xl font-black leading-tight sm:text-6xl"
+            className="max-w-3xl text-4xl font-black leading-tight sm:text-6xl"
             initial={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.65, delay: 0.08 }}
           >
