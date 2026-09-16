@@ -30,7 +30,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_BASE_PATH: /
           VITE_QUOTE_API_URL: ${{ vars.VITE_QUOTE_API_URL }}
           VITE_COMPANY_NAME: ${{ vars.VITE_COMPANY_NAME }}
           VITE_COMPANY_PHONE: ${{ vars.VITE_COMPANY_PHONE }}
