@@ -6,15 +6,15 @@ export type SEOEntry = {
 
 export const seo = {
   home: {
-    title: "Cargo & Shipping Services from UK | Air & Sea Freight Quotes",
+    title: "UK to Worldwide Cargo Shipping & Freight Quotes | Aqua Shipping",
     description:
-      "Fast UK cargo and shipping quotes for Pakistan, India, Dubai, UAE, Asia and Middle Eastern destinations. Air, sea and door-to-door options.",
+      "Request UK to worldwide cargo shipping quotes. Air freight, sea freight, door-to-door delivery, household goods and commercial cargo with Aqua Shipping.",
     path: "/",
   },
   quote: {
     title: "Get a Cargo Shipping Quote | UK International Shipping",
     description:
-      "Request a UK cargo shipping quote for parcels, boxes, household goods and commercial cargo with clear email follow-up.",
+      "Request a UK cargo shipping quote for parcels, boxes, household goods and commercial cargo with a response on your contact number.",
     path: "/get-quote",
   },
   about: {

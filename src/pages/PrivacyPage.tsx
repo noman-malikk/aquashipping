@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { PageHero } from "../components/PageHero";
 import { SEOHead } from "../components/SEOHead";
+import { company } from "../lib/company";
 import { seo } from "../data/seo";
 
 const breadcrumbs = [{ label: "Privacy Policy" }];
@@ -21,7 +22,7 @@ export function PrivacyPage() {
           {
             title: "Information we collect",
             body:
-              "When you submit a quote request, we collect contact details, collection and destination details, cargo information, message details and optional photo filenames.",
+              "The quote form collects your name, contact number, collection and destination countries and cities, any postcodes you provide, and the shipment details you enter. The form does not ask for your email address or file uploads.",
           },
           {
             title: "How we use information",
@@ -29,14 +30,14 @@ export function PrivacyPage() {
               "Your details are used to prepare and respond to your shipping quote, arrange collection where requested, answer customer service questions and keep enquiry records.",
           },
           {
-            title: "Backend alerts",
+            title: "Sending your enquiry",
             body:
-              "Quote details may be sent to the business owner through secure serverless integrations such as Telegram alerts and email notifications. Private credentials are never stored in the frontend.",
+              `We use FormSubmit to process quotation forms and deliver the information you provide to ${company.email}. Your form submission is sent to FormSubmit for this purpose. If you contact us through WhatsApp or your email provider, those services also handle the information you send.`,
           },
           {
             title: "Retention and contact",
             body:
-              "Enquiry records are kept only as long as needed for customer service, operational records and legal obligations. Contact the team to ask about your data.",
+              `For questions about your enquiry or to request access, correction or deletion of your information, contact ${company.legalName} at ${company.email}, call ${company.phone}, or write to ${company.address}. Enquiry records are kept only as long as needed for customer service, operational records and applicable obligations.`,
           },
         ]}
       />

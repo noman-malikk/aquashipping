@@ -1,4 +1,4 @@
-import { Menu, MessageCircle, Phone, Ship, X } from "lucide-react";
+import { Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
@@ -17,13 +17,11 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/92 backdrop-blur">
       <div className="container-page flex h-20 items-center justify-between gap-4">
-        <Link className="focus-ring flex items-center gap-3 rounded" to="/">
-          <span className="flex h-11 w-11 items-center justify-center rounded-md bg-navy text-white">
-            <Ship aria-hidden="true" className="h-6 w-6" />
-          </span>
+        <Link className="focus-ring flex min-w-0 items-center gap-2 rounded" to="/">
+          <img aria-hidden="true" alt="" className="h-11 w-11 shrink-0" width={44} height={44} src={`${import.meta.env.BASE_URL}favicon.svg`} />
           <span>
-            <span className="block text-lg font-black leading-5 text-navy">{company.name}</span>
-            <span className="block text-xs font-bold uppercase text-aqua">Shipping line agent UK</span>
+            <span className="block text-base font-black leading-5 text-navy sm:text-lg">{company.name}</span>
+            <span className="hidden text-xs font-bold uppercase text-aqua sm:block">Shipping line agent UK</span>
           </span>
         </Link>
 
@@ -43,7 +41,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <a className="focus-ring rounded-md bg-blue-50 p-3 text-ocean" href={phoneHref} aria-label="Call now">
+          <a className="focus-ring hidden rounded-md bg-blue-50 p-3 text-ocean sm:block" href={phoneHref} aria-label="Call now">
             <Phone aria-hidden="true" className="h-5 w-5" />
           </a>
           <a className="focus-ring rounded-md bg-teal-50 p-3 text-aqua" href={whatsappHref} aria-label="WhatsApp us">

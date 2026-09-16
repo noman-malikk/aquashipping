@@ -4,6 +4,7 @@ import { ContactSection } from "../components/ContactSection";
 import { PageHero } from "../components/PageHero";
 import { SEOHead } from "../components/SEOHead";
 import { SectionHeading } from "../components/SectionHeading";
+import { company } from "../lib/company";
 import { seo } from "../data/seo";
 
 const breadcrumbs = [{ label: "About" }];
@@ -15,7 +16,7 @@ export function AboutPage() {
       <Breadcrumbs items={breadcrumbs} />
       <PageHero
         eyebrow="About"
-        text="A UK-based cargo and freight-forwarding quote service for customers sending parcels, boxes, household goods and commercial freight to international destinations."
+        text={`${company.legalName} is based at ${company.address}. We help customers request shipping options for parcels, household goods and commercial freight from the UK to international destinations.`}
         title="A practical freight forwarding agent for fast UK cargo quotes"
       />
       <section className="bg-white py-20">
@@ -31,7 +32,7 @@ export function AboutPage() {
               "Destination specialists for Pakistan, India, Dubai, UAE, Asia and the Middle East.",
               "Quote handling designed around clear, practical follow-up.",
               "Air, sea, road transfer, warehousing and documentation needs reviewed together.",
-              "Customs documentation support with careful wording and destination-rule checks.",
+              "Customs documentation support and destination requirements reviewed before booking.",
             ].map((item) => (
               <div className="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-5" key={item}>
                 <CheckCircle2 aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-aqua" />

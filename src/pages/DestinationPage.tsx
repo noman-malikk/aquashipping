@@ -12,7 +12,7 @@ import type { Destination } from "../data/destinations";
 import { services } from "../data/services";
 
 export function DestinationPage({ destination }: { destination: Destination }) {
-  const breadcrumbs = [{ label: "Destinations", href: "/shipping-to-pakistan-from-uk" }, { label: destination.name }];
+  const breadcrumbs = [{ label: destination.name }];
 
   return (
     <>

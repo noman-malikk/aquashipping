@@ -6,6 +6,7 @@ export function NotFoundPage() {
   return (
     <>
       <SEOHead
+        noindex
         description="The page you requested could not be found. Return to Aqua Shipping or request a cargo quote."
         path="/404"
         title="Page Not Found | Aqua Shipping"

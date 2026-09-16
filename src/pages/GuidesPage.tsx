@@ -15,7 +15,7 @@ export function GuidesPage() {
       <Breadcrumbs items={breadcrumbs} />
       <PageHero
         eyebrow="Guides"
-        text="Content-ready templates for cargo costs, air vs sea shipping, customs documents and route-specific advice."
+        text="Plan your shipment with practical guides to UK cargo shipping costs, air freight, sea freight, packing and the details needed for a quote."
         title="Shipping Guides"
       />
       <section className="bg-white py-20">

@@ -1,113 +1,54 @@
 # Aqua Shipping
 
-A professional React, TypeScript and Vite website for a UK cargo and shipping quote business. The frontend is static and GitHub Pages friendly; private Telegram and email credentials stay in the separate `serverless/` backend example.
+React, TypeScript and Vite website for Aqua Shipping Limited, with static HTML generated for every page and deployment through GitHub Pages.
 
-## Stack
+## Business details
 
-- React + TypeScript + Vite
-- Tailwind CSS
-- Framer Motion
-- React Hook Form + Zod
-- React Router clean routes with GitHub Pages 404 fallback
-- Lucide React icons
-- Serverless Cloudflare Worker example for Telegram and email alerts
+The verified public details are in `src/lib/business.ts`:
 
-## Local Setup
+- Telephone and WhatsApp: +447588772465
+- Email and quotation recipient: nomanmalik6254@gmail.com
+- Office: Vista Centre, 50 Salisbury, Hounslow, London, TW4 6JQ
+- Website: https://aquashipping.co.uk
 
-1. Install dependencies:
+The header, footer, contact page, structured data and form share these details. The favicon and header logo use the same `public/favicon.svg` asset. The logo retains the existing Lucide Ship mark.
+
+## Local development
 
 ```bash
 npm install
-```
-
-2. Start the dev server:
-
-```bash
 npm run dev
-```
-
-3. Build the static site:
-
-```bash
+npm run typecheck
 npm run build
-```
-
-4. Preview the production build:
-
-```bash
 npm run preview
 ```
 
-5. Deploy with the `gh-pages` package:
+The build renders 30 public pages, creates sitemap.xml, robots.txt and a noindex 404, then runs the SEO audit. `npm run check:seo` checks an existing build. The GitHub Actions workflow runs typechecking and the build before publishing pushes to main.
 
-```bash
-npm run deploy
-```
+## Quotation email activation
 
-## Frontend Environment Variables
+The single-page form collects name, contact number, collection country/city/postcode, destination country/city/postcode, and shipment details. Postcodes are optional for locations without postal codes. No customer email or upload is requested.
 
-Create `.env.local` for local development:
+Forms POST to `https://formsubmit.co/nomanmalik6254@gmail.com`. No API key or custom backend is required. FormSubmit handles the submission and spam check; its confirmation page handles the result. The site does not display a simulated success message.
 
-```text
-VITE_QUOTE_API_URL=https://your-serverless-endpoint.com/api/quote
-VITE_COMPANY_NAME=Aqua Shipping
-VITE_COMPANY_PHONE=+44 20 0000 0000
-VITE_COMPANY_EMAIL=quotes@aquashipping.co.uk
-VITE_COMPANY_WHATSAPP=447000000000
-VITE_SITE_URL=https://www.aquashipping.co.uk
-```
+After deployment:
 
-Do not put Telegram bot tokens, email API keys or private credentials in frontend environment variables.
+1. Submit an enquiry from https://aquashipping.co.uk/get-quote/.
+2. Open the activation email sent by FormSubmit to nomanmalik6254@gmail.com (check spam) and confirm the address.
+3. Submit another enquiry and verify it reaches the inbox with all nine field values. Do not assume the activation request is delivered as a normal quote.
 
-## GitHub Pages
+Until the recipient confirms activation, automatic delivery is not verified. Phone, WhatsApp and mailto links are available independently. No live test submission was sent during development. See [FormSubmit setup](https://formsubmit.co/) and [SEO launch](docs/seo-launch.md).
 
-The Vite `base` path is controlled by `VITE_BASE_PATH`.
+The old unused Cloudflare/Telegram demo backend has been removed. Existing `VITE_QUOTE_API_URL` and `VITE_COMPANY_*` repository variables are no longer used, so stale values cannot override the supplied public details.
 
-For a repository page such as `https://username.github.io/aquashipping/`:
+## Site configuration
 
-```bash
-VITE_BASE_PATH=/aquashipping/ npm run build
-```
+- `VITE_SITE_URL` defaults to `https://aquashipping.co.uk`. The deployment workflow explicitly sets this preferred domain.
+- `VITE_BASE_PATH` defaults to `/`. For a separate repository Pages deployment, set it to the repository subpath and set a matching `VITE_SITE_URL`.
+- Optional `VITE_GOOGLE_SITE_VERIFICATION` and `VITE_BING_SITE_VERIFICATION` accept verification meta-tag content values.
 
-The included GitHub Actions workflow sets:
-
-```text
-VITE_BASE_PATH=/${{ github.event.repository.name }}/
-```
-
-It also copies `dist/index.html` to `dist/404.html` so direct route refreshes work on GitHub Pages.
-
-## Quote Backend
-
-Deploy the worker in `serverless/`, then set the deployed URL as `VITE_QUOTE_API_URL` in GitHub Pages repository variables or `.env.local`.
-
-Backend secrets:
-
-```text
-TELEGRAM_BOT_TOKEN=
-TELEGRAM_CHAT_ID=
-OWNER_EMAIL=
-EMAIL_API_KEY=
-EMAIL_FROM=
-ALLOWED_ORIGIN=
-```
-
-The backend sends:
-
-- Telegram alert to the business owner or team chat
-- Confirmation email to the customer
-- Notification email to the business owner
+Do not add private credentials to frontend environment variables.
 
 ## Content
 
-Reusable content lives in `src/data/`:
-
-- `destinations.ts`
-- `services.ts`
-- `faqs.ts`
-- `testimonials.ts`
-- `seo.ts`
-- `navLinks.ts`
-- `articles.ts`
-
-Update these files to change page copy, routes, FAQs, service cards and guide templates.
+Services, destinations, guides, FAQs and SEO copy live in `src/data/`. No sample testimonials are published. Add customer reviews only when verified and approved for use.

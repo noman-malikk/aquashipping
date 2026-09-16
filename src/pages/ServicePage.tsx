@@ -10,7 +10,7 @@ import type { Service } from "../data/services";
 import { destinations } from "../data/destinations";
 
 export function ServicePage({ service }: { service: Service }) {
-  const breadcrumbs = [{ label: "Services", href: "/air-cargo-services-uk" }, { label: service.name }];
+  const breadcrumbs = [{ label: service.name }];
 
   return (
     <>

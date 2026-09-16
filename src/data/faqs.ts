@@ -5,9 +5,17 @@ export type FAQ = {
 
 export const homeFaqs: FAQ[] = [
   {
+    question: "Can I request cargo shipping from the UK to worldwide destinations?",
+    answer: "Yes. Send your destination country and city, UK collection postcode and cargo details. We review worldwide shipping enquiries and confirm route availability, the service scope and any cargo restrictions before booking.",
+  },
+  {
+    question: "How much does international cargo shipping from the UK cost?",
+    answer: "Your quote depends on the destination, packed weight and dimensions, transport method, collection and delivery requirements. Send an item list and your preferred shipping date so we can review air freight, sea freight or door-to-door options. Ask which charges are included in the quote.",
+  },
+  {
     question: "How quickly will I receive my shipping quote?",
     answer:
-      "The team reviews quote requests as promptly as possible during business hours. Complex cargo, customs questions or very large shipments may need extra checking before we email your quote.",
+      "The team reviews quote requests as promptly as possible during business hours. Complex cargo, customs questions or very large shipments may need extra checking before we contact you with your quote.",
   },
   {
     question: "Can you arrange collection in the UK?",
@@ -30,12 +38,12 @@ export const quoteFaqs: FAQ[] = [
   {
     question: "What details do you need for an accurate quote?",
     answer:
-      "We need the collection location, destination, cargo type, approximate weight, number of boxes or items, service preference and any delivery or packing requirements.",
+      "Enter your name, contact number, collection and destination countries and cities, and postcodes where available. Use the details box to describe your shipment, including any known weight, size and timing requirements.",
   },
   {
-    question: "Can I upload item photos?",
+    question: "How can I share item photos?",
     answer:
-      "Yes, the form includes an optional photo field so the team can understand the shipment. The example serverless handler records photo names; production file storage can be added if required.",
+      "Send item photos to us on WhatsApp at +447588772465. The quote form only asks for contact details, collection and destination locations, and a description of your shipment.",
   },
   {
     question: "Will my details be shared?",

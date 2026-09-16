@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/copy-404.mjs",
+    "build": "vite build && node scripts/prerender.mjs && node scripts/check-seo.mjs",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:seo": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

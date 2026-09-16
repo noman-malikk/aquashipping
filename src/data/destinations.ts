@@ -101,7 +101,7 @@ export const destinations: Destination[] = [
     description:
       "Request cargo to India from UK quotes for parcels, courier-style deliveries, air cargo, sea freight and household goods.",
     intro:
-      "Arrange cargo to India from UK for family parcels, excess baggage, household goods, documents and business shipments with clear email quotes.",
+      "Arrange cargo to India from UK for family parcels, excess baggage, household goods, documents and business shipments with clear shipping quotes.",
     icon: Globe2,
     cities: ["Delhi", "Mumbai", "Ahmedabad", "Hyderabad", "Chennai", "Bengaluru", "Punjab", "Kerala"],
     sections: [
@@ -332,7 +332,7 @@ export const destinations: Destination[] = [
     description:
       "Request Asia cargo from UK quotes for parcels, boxes, household goods, air cargo, sea freight and commercial cargo.",
     intro:
-      "Aqua Shipping helps customers compare air cargo and sea freight options for Asian destinations, with clear email quotes.",
+      "Aqua Shipping helps customers compare air cargo and sea freight options for Asian destinations, with clear shipping quotes.",
     icon: Ship,
     cities: ["Bangladesh", "Sri Lanka", "Malaysia", "Singapore", "Thailand", "Philippines"],
     sections: [

@@ -507,7 +507,7 @@ export const services: Service[] = [
       {
         title: "Route and carrier rules",
         body:
-          "Requirements vary by service type, destination, airline, shipping line and local authorities. We use cautious wording and confirm acceptance before booking.",
+          "Requirements vary by service type, destination, airline, shipping line and local authorities. We confirm cargo acceptance before booking.",
       },
     ],
     faqs: [
@@ -530,7 +530,7 @@ export const trustItems = [
   { label: "Air & Sea Cargo", icon: BadgeCheck },
   { label: "UK Collection Available", icon: Home },
   { label: "Customs Documentation Support", icon: ClipboardCheck },
-  { label: "Fast Email Quotes", icon: Plane },
+  { label: "Simple Quote Requests", icon: Plane },
   { label: "Tracking Support", icon: Ship },
 ];
 

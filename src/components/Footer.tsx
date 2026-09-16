@@ -1,8 +1,8 @@
-import { Mail, MessageCircle, Phone, Ship } from "lucide-react";
+import { MapPin, Mail, MessageCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { destinationLinks, serviceLinks } from "../data/navLinks";
 import { articles } from "../data/articles";
-import { company, phoneHref, whatsappHref } from "../lib/company";
+import { company, mapHref, phoneHref, whatsappHref } from "../lib/company";
 
 export function Footer() {
   return (
@@ -10,14 +10,19 @@ export function Footer() {
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
         <div>
           <Link className="focus-ring inline-flex items-center gap-3 rounded" to="/">
-            <span className="flex h-11 w-11 items-center justify-center rounded-md bg-ocean text-white">
-              <Ship aria-hidden="true" className="h-6 w-6" />
-            </span>
+            <img aria-hidden="true" alt="" className="h-11 w-11 shrink-0" width={44} height={44} src={`${import.meta.env.BASE_URL}favicon.svg`} />
             <span className="text-lg font-black">{company.name}</span>
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-7 text-blue-100">
-            UK-based cargo quote support for Pakistan, India, Dubai, UAE, Asia and Middle Eastern destinations.
+            UK to worldwide cargo shipping quotes for air freight, sea freight, household goods and commercial cargo, including Pakistan, India, Dubai and the UAE.
           </p>
+          <address className="mt-5 text-sm not-italic leading-7 text-blue-100">
+            <span className="block font-bold">{company.legalName}</span>
+            <a className="focus-ring inline-flex items-start gap-2 rounded hover:text-aqua" href={mapHref}>
+              <MapPin aria-hidden="true" className="mt-1 h-4 w-4 shrink-0" />
+              <span>{company.address}</span>
+            </a>
+          </address>
           <div className="mt-6 grid gap-3 text-sm text-blue-50">
             <a className="focus-ring inline-flex items-center gap-2 rounded hover:text-aqua" href={phoneHref}>
               <Phone aria-hidden="true" className="h-4 w-4" />
@@ -27,7 +32,7 @@ export function Footer() {
               <MessageCircle aria-hidden="true" className="h-4 w-4" />
               WhatsApp
             </a>
-            <a className="focus-ring inline-flex items-center gap-2 rounded hover:text-aqua" href={`mailto:${company.email}`}>
+            <a className="focus-ring inline-flex min-w-0 items-center gap-2 break-all rounded hover:text-aqua" href={`mailto:${company.email}`}>
               <Mail aria-hidden="true" className="h-4 w-4" />
               {company.email}
             </a>

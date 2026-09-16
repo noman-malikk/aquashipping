@@ -25,7 +25,7 @@ export function GetQuotePage() {
       <PageHero
         eyebrow="Get a cargo quote"
         showCta={false}
-        text="Send us the key details for parcels, boxes, household goods or commercial cargo. The team reviews your request and responds by email with practical shipping options."
+        text="Send us the key details for parcels, boxes, household goods or commercial cargo. The team reviews your request and contacts you on the number provided with practical shipping options."
         title="Get a Cargo Shipping Quote"
       />
       <TrustBadges />
@@ -35,9 +35,9 @@ export function GetQuotePage() {
           <aside className="rounded-lg border border-slate-200 bg-slate-50 p-6">
             <h2 className="text-xl font-black text-navy">Before you submit</h2>
             <ul className="mt-5 grid gap-4 text-sm leading-7 text-slate-600">
-              <li>Include the collection postcode and destination city.</li>
-              <li>Estimate the weight as closely as you can.</li>
-              <li>Tell us if you prefer air cargo, sea cargo or are not sure.</li>
+              <li>Include the collection and destination country, city and postcode where available.</li>
+              <li>Use a contact number where we can reach you, including your country code.</li>
+              <li>Describe your items in the details box. Include weight or dimensions if known.</li>
               <li>Add notes about fragile, commercial or time-sensitive cargo.</li>
             </ul>
             <p className="mt-6 rounded-md bg-white px-4 py-3 text-sm font-semibold text-navy">

@@ -27,16 +27,15 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
-          VITE_QUOTE_API_URL: ${{ vars.VITE_QUOTE_API_URL }}
-          VITE_COMPANY_NAME: ${{ vars.VITE_COMPANY_NAME }}
-          VITE_COMPANY_PHONE: ${{ vars.VITE_COMPANY_PHONE }}
-          VITE_COMPANY_EMAIL: ${{ vars.VITE_COMPANY_EMAIL }}
-          VITE_COMPANY_WHATSAPP: ${{ vars.VITE_COMPANY_WHATSAPP }}
-          VITE_SITE_URL: ${{ vars.VITE_SITE_URL }}
+          VITE_BASE_PATH: /
+          VITE_SITE_URL: https://aquashipping.co.uk
+          VITE_GOOGLE_SITE_VERIFICATION: ${{ vars.VITE_GOOGLE_SITE_VERIFICATION }}
+          VITE_BING_SITE_VERIFICATION: ${{ vars.VITE_BING_SITE_VERIFICATION }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

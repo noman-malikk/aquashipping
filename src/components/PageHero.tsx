@@ -17,6 +17,8 @@ export function PageHero({ eyebrow, title, text, showCta = true }: PageHeroProps
         alt="Cargo aircraft, containers and shipping logistics"
         className="absolute inset-0 h-full w-full object-cover opacity-30"
         src={heroImage}
+        fetchPriority="high"
+        decoding="async"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/92 to-navy/65" />
       <div className="container-page relative z-10">

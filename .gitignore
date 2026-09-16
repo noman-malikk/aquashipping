@@ -5,3 +5,5 @@ dist/
 .env.local
 .env.*.local
 serverless/wrangler.toml
+
+.prerender/

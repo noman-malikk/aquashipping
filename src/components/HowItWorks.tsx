@@ -14,8 +14,8 @@ const steps = [
     icon: PackageSearch,
   },
   {
-    title: "You receive a quote by email",
-    text: "The team replies by email with practical service options and next steps.",
+    title: "We contact you with options",
+    text: "The team contacts you on your number to discuss shipping options and next steps.",
     icon: MailCheck,
   },
   {

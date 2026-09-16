@@ -14,13 +14,14 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FAQAccordion } from "../components/FAQAccordion";
+import { DestinationCard } from "../components/DestinationCard";
+import { destinations } from "../data/destinations";
 import { Hero } from "../components/Hero";
 import { HowItWorks } from "../components/HowItWorks";
 import { IndustryGrid } from "../components/IndustryGrid";
 import { SEOHead } from "../components/SEOHead";
 import { SectionHeading } from "../components/SectionHeading";
 import { ServiceCard } from "../components/ServiceCard";
-import { Testimonials } from "../components/Testimonials";
 import { TrustBadges } from "../components/TrustBadges";
 import { ContactSection } from "../components/ContactSection";
 import { CTAButton } from "../components/CTAButton";
@@ -143,6 +144,36 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="bg-white py-20" id="destinations">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Shipping destinations"
+            title="Cargo shipping from the UK: popular overseas routes"
+            text="Explore air cargo, sea freight and door-to-door options for your destination. For other worldwide routes, send your destination country and city so we can confirm availability."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {destinations.map((destination) => <DestinationCard key={destination.slug} destination={destination} />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-20">
+        <div className="container-page max-w-4xl">
+          <h2 className="text-3xl font-black text-navy">How to compare international shipping quotes from the UK</h2>
+          <p className="mt-5 leading-8 text-slate-600">
+            The right freight service depends on your cargo size, delivery deadline and destination. <Link className="font-bold text-ocean underline" to="/air-cargo-services-uk">Air freight</Link> suits urgent or smaller shipments. <Link className="font-bold text-ocean underline" to="/sea-freight-services-uk">Sea freight</Link> offers LCL shared-container and FCL full-container options for larger loads. Ask which collection, handling and delivery charges are included when comparing quotes.
+          </p>
+          <p className="mt-4 leading-8 text-slate-600">
+            For <Link className="font-bold text-ocean underline" to="/household-goods-shipping-overseas">shipping household goods overseas</Link>, list every box and any furniture that needs packing. For <Link className="font-bold text-ocean underline" to="/commercial-cargo-shipping">commercial cargo</Link>, include the goods description, number of pallets or cartons, packed dimensions and weight. These details help us review a suitable route and avoid assumptions about the load.
+          </p>
+          <p className="mt-4 leading-8 text-slate-600">
+            Start with your UK collection postcode, destination country and city, item list, packed weight and dimensions, and preferred shipping date. If you need <Link className="font-bold text-ocean underline" to="/door-to-door-cargo-service">door-to-door cargo shipping</Link>, include the delivery address and any access restrictions. We confirm the service scope and route availability before booking.
+          </p>
+          <Link className="focus-ring mt-6 inline-block font-bold text-ocean underline" to="/get-quote">Request your UK to worldwide shipping quote</Link>
+          <p className="mt-4"><Link className="focus-ring font-bold text-ocean underline" to="/guides/international-shipping-from-uk-guide">Read our guide to planning an international shipment</Link></p>
+        </div>
+      </section>
+
       <IndustryGrid />
 
       <HowItWorks />
@@ -151,9 +182,9 @@ export function HomePage() {
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <ScrollReveal>
             <p className="text-sm font-bold uppercase text-aqua">Fast quote preview</p>
-            <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Get a clear email quote without a long phone call first</h2>
+            <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Request a shipping quote in one simple form</h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
-              Submit your route, cargo details, preferred service and collection requirements. The owner receives the enquiry instantly through the backend alert flow, then responds to the customer by email.
+              Share your name, contact number, collection and destination locations, and shipment details. Our team reviews your enquiry and contacts you to discuss the available shipping options.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <CTAButton icon={Ship} to="/get-quote">Start Quote</CTAButton>
@@ -165,7 +196,7 @@ export function HomePage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
                   { icon: Timer, text: "Prompt quote review" },
-                  { icon: MailCheck, text: "Quote sent by email" },
+                  { icon: MailCheck, text: "Personal quote follow-up" },
                   { icon: Truck, text: "Collection reviewed" },
                   { icon: ShieldCheck, text: "Privacy reassurance" },
                 ].map((item) => {
@@ -204,8 +235,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <Testimonials />
 
       <section className="bg-white py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">

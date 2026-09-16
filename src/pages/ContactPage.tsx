@@ -3,7 +3,7 @@ import { Breadcrumbs } from "../components/Breadcrumbs";
 import { CTAButton } from "../components/CTAButton";
 import { PageHero } from "../components/PageHero";
 import { SEOHead } from "../components/SEOHead";
-import { company, phoneHref, whatsappHref } from "../lib/company";
+import { company, mapHref, phoneHref, whatsappHref } from "../lib/company";
 import { seo } from "../data/seo";
 
 const breadcrumbs = [{ label: "Contact" }];
@@ -41,16 +41,21 @@ export function ContactPage() {
             <h2 className="mt-5 text-xl font-black text-navy">Email</h2>
             <p className="mt-3 text-sm leading-7 text-slate-600">Email quote support for personal and commercial cargo enquiries.</p>
             <div className="mt-6">
-              <CTAButton href={`mailto:${company.email}`} variant="ghost">Email Team</CTAButton>
+              <CTAButton className="max-w-full break-all [&>span]:min-w-0" href={`mailto:${company.email}`} variant="ghost">{company.email}</CTAButton>
             </div>
           </article>
         </div>
         <div className="container-page mt-10">
           <div className="rounded-lg bg-navy p-8 text-white">
             <MapPin aria-hidden="true" className="h-8 w-8 text-aqua" />
-            <h2 className="mt-4 text-2xl font-black">UK-based cargo quote support</h2>
+            <h2 className="mt-4 text-2xl font-black">Our office in Hounslow, London</h2>
+            <address className="mt-4 not-italic leading-8 text-blue-100">
+              <strong className="block text-white">{company.legalName}</strong>
+              {company.streetAddress}<br />{company.addressLocality}, {company.addressRegion}<br />{company.postalCode}
+            </address>
+            <a className="focus-ring mt-4 inline-block rounded font-bold text-aqua underline" href={mapHref}>View office location on Google Maps</a>
             <p className="mt-3 max-w-3xl text-base leading-8 text-blue-100">
-              Share your collection postcode, destination city, cargo type, weight and preferred service. We will review air cargo, sea cargo and door-to-door options where available.
+              Share your collection and destination country, city and postcode, along with a description of your shipment. We will review air cargo, sea cargo and door-to-door options where available.
             </p>
           </div>
         </div>
