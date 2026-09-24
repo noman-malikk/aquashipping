@@ -45,7 +45,7 @@ for (const url of urls) {
   assert(graph.some((item) => item["@type"] === "WebPage" && item.url === url));
   const organization = graph.find((item) => item["@type"] === "Organization");
   assert.equal(organization.telephone, "+447588772465", `Incorrect public phone: ${url}`);
-  assert.equal(organization.email, "nomanmalik6254@gmail.com", `Incorrect public email: ${url}`);
+  assert.equal(organization.email, "info@aquashipping.co.uk", `Incorrect public email: ${url}`);
   assert.equal(organization.address.postalCode, "TW4 6JQ", `Incorrect office postcode: ${url}`);
   assert(html.includes("Vista Centre, 50 Salisbury"), `Office address missing: ${url}`);
   assert(!/442000000000|447000000000|quotes@aquashipping|owner@example|A\. Khan|S\. Patel|M\. Rahman/.test(html), `Stale business or sample content: ${url}`);
@@ -53,7 +53,7 @@ for (const url of urls) {
 
   for (const link of tags(html, "a")) {
     if (link.href?.startsWith("tel:")) assert.equal(link.href, "tel:+447588772465");
-    if (link.href?.startsWith("mailto:")) assert.equal(link.href, "mailto:nomanmalik6254@gmail.com");
+    if (link.href?.startsWith("mailto:")) assert(["mailto:info@aquashipping.co.uk", "mailto:faizan@aquashipping.co.uk", "mailto:noman@aquashipping.co.uk"].includes(link.href), `Unexpected email link: ${link.href}`);
     if (link.href?.startsWith("https://wa.me/")) assert.equal(link.href, "https://wa.me/447588772465");
     if (!link.href || /^(tel:|mailto:|#)/.test(link.href)) continue;
     const target = new URL(link.href.replaceAll("&amp;", "&"), url);
@@ -78,7 +78,8 @@ assert(!tags(notFound, "link").some((tag) => tag.rel === "canonical"), "404 must
 console.log(`SEO checks passed for ${urls.length} pages: static content, unique metadata, canonicals, structured data, internal links, assets and 404.`);
 
 const quoteHtml = await readFile("dist/get-quote/index.html", "utf8");
-assert(tags(quoteHtml, "form").some((form) => form.action === "https://formsubmit.co/nomanmalik6254@gmail.com" && form.method === "POST"), "Quotation recipient or submission method is incorrect");
+assert(tags(quoteHtml, "input").some((field) => field.type === "hidden" && field.name === "_cc" && field.value === "faizan@aquashipping.co.uk,malik_faizan@hotmail.co.uk,noman@aquashipping.co.uk"), "Quotation CC recipients are incorrect");
+assert(tags(quoteHtml, "form").some((form) => form.action === "https://formsubmit.co/info@aquashipping.co.uk" && form.method === "POST"), "Quotation recipient or submission method is incorrect");
 const fieldNames = [...tags(quoteHtml, "input").filter((field) => field.type !== "hidden"), ...tags(quoteHtml, "textarea")].map((field) => field.name).sort();
 assert.deepEqual(fieldNames, ["fullName", "phone", "collectionCountry", "collectionCity", "collectionPostcode", "destinationCountry", "destinationCity", "destinationPostcode", "message"].sort());
 console.log("Business details, phone/WhatsApp/email links, shared favicon and nine-field quotation form checks passed.");

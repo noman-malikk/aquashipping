@@ -46,6 +46,20 @@ export function ContactPage() {
           </article>
         </div>
         <div className="container-page mt-10">
+          <h2 className="text-2xl font-black text-navy">Contact our team members</h2>
+          <p className="mt-3 text-base leading-8 text-slate-600">You can also contact Faizan or Noman directly for help with your shipment.</p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {company.teamMembers.map((member) => (
+              <article key={member.email} className="min-w-0 rounded-lg border border-slate-200 bg-slate-50 p-6">
+                <h3 className="text-xl font-black text-navy">{member.name}</h3>
+                <a className="focus-ring mt-3 inline-block break-all rounded font-semibold text-ocean underline" href={`mailto:${member.email}`}>
+                  {member.email}
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+        <div className="container-page mt-10">
           <div className="rounded-lg bg-navy p-8 text-white">
             <MapPin aria-hidden="true" className="h-8 w-8 text-aqua" />
             <h2 className="mt-4 text-2xl font-black">Our office in Hounslow, London</h2>

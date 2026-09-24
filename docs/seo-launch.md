@@ -4,13 +4,13 @@
 
 The live site is `https://aquashipping.co.uk`; `www` redirects to this preferred domain. The workflow and default canonical URL now use the non-www hostname. The live site checked before these changes still served the earlier build; deploy the current changes to publish the prerendered pages.
 
-Verified business details are shared through `src/lib/business.ts`: Aqua Shipping Limited, +447588772465 for telephone and WhatsApp, nomanmalik6254@gmail.com for email, and Vista Centre, 50 Salisbury, Hounslow, London, TW4 6JQ for the office. Old `VITE_COMPANY_*` variables are no longer used.
+Verified business details are shared through `src/lib/business.ts`: Aqua Shipping Limited, +447588772465 for telephone and WhatsApp, info@aquashipping.co.uk for email, and Vista Centre, 50 Salisbury, Hounslow, London, TW4 6JQ for the office. Old `VITE_COMPANY_*` variables are no longer used.
 
 Optional GitHub repository variables `VITE_GOOGLE_SITE_VERIFICATION` and `VITE_BING_SITE_VERIFICATION` accept only the content value of the verification meta tag. Rebuild after setting them.
 
 The workflow uses `VITE_BASE_PATH: /` and `VITE_SITE_URL: https://aquashipping.co.uk`. For a repository-subpath deployment, change both settings together. Sitemap and canonical URLs must match the actual public deployment. Domain DNS, HTTPS and hostname redirects are configured in GitHub Pages / the domain provider.
 
-Quotation forms use FormSubmit and send to nomanmalik6254@gmail.com after one-time recipient activation. Follow the [activation steps](../README.md#quotation-email-activation) after publishing and verify a second enquiry arrives. Inbox delivery and activation were not tested during development.
+Quotation forms use FormSubmit and send to info@aquashipping.co.uk after one-time recipient activation. Follow the [activation steps](../README.md#quotation-email-activation) after publishing and verify a second enquiry arrives. Inbox delivery and activation were not tested during development.
 
 ## What the build now does
 
@@ -78,4 +78,4 @@ References: [Google JavaScript SEO](https://developers.google.com/search/docs/cr
 
 After replacing the public details and simplifying the quotation form, TypeScript, the production build and the SEO/business-data audit passed. All 30 pages were checked in Chrome at a mobile viewport for HTTP responses, canonical metadata, contact links, office address, layout overflow and hydration errors. The homepage, contact page and quotation form were also checked at 320px and desktop widths.
 
-The form's native POST was intercepted locally: it targeted `https://formsubmit.co/nomanmalik6254@gmail.com` and contained the nine requested fields plus the email subject/template. Invalid contact numbers prevented submission; the successful path sent trimmed values. A native submission with JavaScript disabled and an empty destination postcode also passed. No live enquiry was sent, and inbox activation/delivery still requires the owner steps in the README.
+The form's native POST was intercepted locally: it targeted `https://formsubmit.co/info@aquashipping.co.uk` and contained the nine requested fields plus the email subject/template. Invalid contact numbers prevented submission; the successful path sent trimmed values. A native submission with JavaScript disabled and an empty destination postcode also passed. No live enquiry was sent, and inbox activation/delivery still requires the owner steps in the README.

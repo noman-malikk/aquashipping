@@ -33,6 +33,7 @@ export function QuoteForm() {
     <form ref={formRef} action={`https://formsubmit.co/${company.email}`} method="POST" className="min-w-0 rounded-lg border border-slate-200 bg-white p-5 shadow-card sm:p-8" onSubmit={handleSubmit(onSubmit)}>
       <input type="hidden" name="_subject" value="New Aqua Shipping quotation enquiry" />
       <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_cc" value={company.quoteCcEmails.join(",")} />
       <h2 className="text-2xl font-black text-navy">Request a shipping quote</h2>
       <p className="mt-2 text-sm leading-6 text-slate-600">Tell us where your shipment is going and what you need to send. We will contact you on the number below.</p>
       <fieldset className="mt-6 grid gap-5 sm:grid-cols-2">

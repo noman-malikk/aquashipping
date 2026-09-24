@@ -7,7 +7,8 @@ React, TypeScript and Vite website for Aqua Shipping Limited, with static HTML g
 The verified public details are in `src/lib/business.ts`:
 
 - Telephone and WhatsApp: +447588772465
-- Email and quotation recipient: nomanmalik6254@gmail.com
+- Email and quotation recipient: info@aquashipping.co.uk
+- Quotation CC recipients: faizan@aquashipping.co.uk, malik_faizan@hotmail.co.uk, noman@aquashipping.co.uk
 - Office: Vista Centre, 50 Salisbury, Hounslow, London, TW4 6JQ
 - Website: https://aquashipping.co.uk
 
@@ -29,13 +30,13 @@ The build renders 30 public pages, creates sitemap.xml, robots.txt and a noindex
 
 The single-page form collects name, contact number, collection country/city/postcode, destination country/city/postcode, and shipment details. Postcodes are optional for locations without postal codes. No customer email or upload is requested.
 
-Forms POST to `https://formsubmit.co/nomanmalik6254@gmail.com`. No API key or custom backend is required. FormSubmit handles the submission and spam check; its confirmation page handles the result. The site does not display a simulated success message.
+Forms POST to `https://formsubmit.co/info@aquashipping.co.uk`. No API key or custom backend is required. FormSubmit handles the submission and spam check; its confirmation page handles the result. The site does not display a simulated success message.
 
 After deployment:
 
 1. Submit an enquiry from https://aquashipping.co.uk/get-quote/.
-2. Open the activation email sent by FormSubmit to nomanmalik6254@gmail.com (check spam) and confirm the address.
-3. Submit another enquiry and verify it reaches the inbox with all nine field values. Do not assume the activation request is delivered as a normal quote.
+2. Open the activation email sent by FormSubmit to info@aquashipping.co.uk (check spam) and confirm the address.
+3. Submit another enquiry and verify it reaches the main inbox and all three CC inboxes with all nine field values. Do not assume the activation request is delivered as a normal quote.
 
 Until the recipient confirms activation, automatic delivery is not verified. Phone, WhatsApp and mailto links are available independently. No live test submission was sent during development. See [FormSubmit setup](https://formsubmit.co/) and [SEO launch](docs/seo-launch.md).
 
