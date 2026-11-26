@@ -4,7 +4,7 @@
 
 The live site is `https://aquashipping.co.uk`; `www` redirects to this preferred domain. The workflow and default canonical URL now use the non-www hostname. The live site checked before these changes still served the earlier build; deploy the current changes to publish the prerendered pages.
 
-Verified business details are shared through `src/lib/business.ts`: Aqua Shipping Limited, +447588772465 for telephone and WhatsApp, info@aquashipping.co.uk for email, and Vista Centre, 50 Salisbury, Hounslow, London, TW4 6JQ for the office. Old `VITE_COMPANY_*` variables are no longer used.
+Verified business details are shared through `src/lib/business.ts`: Aqua Shipping Limited, +447864096940 for telephone and WhatsApp, info@aquashipping.co.uk for email, and Vista Centre, 50 Salisbury, Hounslow, London, TW4 6JQ for the office. Old `VITE_COMPANY_*` variables are no longer used.
 
 Optional GitHub repository variables `VITE_GOOGLE_SITE_VERIFICATION` and `VITE_BING_SITE_VERIFICATION` accept only the content value of the verification meta tag. Rebuild after setting them.
 

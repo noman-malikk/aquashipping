@@ -44,7 +44,7 @@ for (const url of urls) {
   const graph = JSON.parse(structured[0][1])["@graph"];
   assert(graph.some((item) => item["@type"] === "WebPage" && item.url === url));
   const organization = graph.find((item) => item["@type"] === "Organization");
-  assert.equal(organization.telephone, "+447588772465", `Incorrect public phone: ${url}`);
+  assert.equal(organization.telephone, "+447864096940", `Incorrect public phone: ${url}`);
   assert.equal(organization.email, "info@aquashipping.co.uk", `Incorrect public email: ${url}`);
   assert.equal(organization.address.postalCode, "TW4 6JQ", `Incorrect office postcode: ${url}`);
   assert(html.includes("Vista Centre, 50 Salisbury"), `Office address missing: ${url}`);
@@ -52,7 +52,7 @@ for (const url of urls) {
   assert(tags(html, "link").some((tag) => tag.rel === "icon" && tag.href.endsWith("/favicon.svg")), `Missing favicon: ${url}`);
 
   for (const link of tags(html, "a")) {
-    if (link.href?.startsWith("tel:")) assert.equal(link.href, "tel:+447588772465");
+    if (link.href?.startsWith("tel:")) assert.equal(link.href, "tel:+447864096940");
     if (link.href?.startsWith("mailto:")) assert(["mailto:info@aquashipping.co.uk", "mailto:faizan@aquashipping.co.uk", "mailto:noman@aquashipping.co.uk"].includes(link.href), `Unexpected email link: ${link.href}`);
     if (link.href?.startsWith("https://wa.me/")) assert.equal(link.href, "https://wa.me/447588772465");
     if (!link.href || /^(tel:|mailto:|#)/.test(link.href)) continue;

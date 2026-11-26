@@ -6,7 +6,7 @@ React, TypeScript and Vite website for Aqua Shipping Limited, with static HTML g
 
 The verified public details are in `src/lib/business.ts`:
 
-- Telephone and WhatsApp: +447588772465
+- Telephone and WhatsApp: +447864096940
 - Email and quotation recipient: info@aquashipping.co.uk
 - Quotation CC recipients: faizan@aquashipping.co.uk, malik_faizan@hotmail.co.uk, noman@aquashipping.co.uk
 - Office: Vista Centre, 50 Salisbury, Hounslow, London, TW4 6JQ

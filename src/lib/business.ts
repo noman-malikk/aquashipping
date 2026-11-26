@@ -2,7 +2,7 @@
 export const business = {
   name: "Aqua Shipping",
   legalName: "Aqua Shipping Limited",
-  phone: "+447588772465",
+  phone: "+447864096940",
   email: "info@aquashipping.co.uk",
   quoteCcEmails: [
     "faizan@aquashipping.co.uk",

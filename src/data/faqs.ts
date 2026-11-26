@@ -43,7 +43,7 @@ export const quoteFaqs: FAQ[] = [
   {
     question: "How can I share item photos?",
     answer:
-      "Send item photos to us on WhatsApp at +447588772465. The quote form only asks for contact details, collection and destination locations, and a description of your shipment.",
+      "Send item photos to us on WhatsApp at +447864096940. The quote form only asks for contact details, collection and destination locations, and a description of your shipment.",
   },
   {
     question: "Will my details be shared?",
